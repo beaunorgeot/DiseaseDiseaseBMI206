@@ -2,7 +2,10 @@ setwd("/Users/beaunorgeot/BMI206/DiseaseDiseaseBMI206/data")
 
 #load data
 indata1 <- read.table("DataS1_interactome.tsv", sep="\t", header = T)
-#indata2 <- read.delim("DataS2_disease_genes.tsv", sep="\t",header = T)
+indata2 <- read.delim("DataS2_disease_genes.tsv", sep="\t", header =T,comment.char="#")
+#[ ,1:4]
+
+#DataS2_disease_genes <- read.delim("~/Box Sync/UCSF/Fall Classes 2015/BMI_206/Project/DiseaseDiseaseBMI206/data/DataS2_disease_genes.tsv", comment.char="#")
 # data2 has funky format, cols 5&6 are comma seperated. Fix: load cols 1-4 as tsv, load 5&6 as csv, col bind the 2
 indata3 <- read.table("DataS3_localization.tsv", sep="\t", header = T)
 indata4 <- read.table("DataS4_disease_pairs.tsv", sep="\t", header = T)

@@ -23,7 +23,7 @@
 # (vii) signaling
 #
 # ---------------------------------------------------------------------------
- gene_ID_1	 gene_ID_2	data_source(s)
+# gene_ID_1	 gene_ID_2	data_source(s)
 1394	2778	literature
 100290337	4214	literature
 122704	54460	complexes
