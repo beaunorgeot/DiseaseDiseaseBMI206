@@ -1,0 +1,5 @@
+
+> gene set A from "source/MS.txt": 69 genes, network-diameter d_A = 1.85507246377
+> gene set B from "source/PD.txt": 20 genes, network-diameter d_B = 1.05
+> mean shortest distance between A & B: d_AB = 2.73033707865 
+> network separation of A & B:          s_AB = 1.27780084677
