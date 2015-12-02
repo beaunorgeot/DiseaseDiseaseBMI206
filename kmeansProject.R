@@ -53,7 +53,11 @@ dim(netdfClean) #13460 x 15
 #you can get the size of each cluster in an easier manner
 km.out$size # 13397 63 
 #ratio's of size of groups and group1/group2 are identical. What's happening with the groups?
-
+totalNodes = 13460
+c1 = 13397
+c2 = 63
+c1prop = c1/totalNodes #0.9953195
+c2prop = c2/totalNodes #0.004680535
 #add cluster labels as a column
 combdf <- cbind(netdfClean, clusterNum = km.out$cluster)
 
@@ -64,8 +68,9 @@ combdf <- cbind(netdfClean, clusterNum = km.out$cluster)
 #kdTargets <- read.delim(data, sep = "\t")
 # sadly, my attempt to use getURL failed. Will reinvestiage later. Just curled instead.
 kdTarget = read.delim("CbG-binding.tsv", header = T)
+dim(kdTarget)
 #now just extract the entrez_gene_id column and compare that column to each group
-names(kdTarget)
+names(kdTarget) #23191     7
 #Next: create dummy var "in target db". ifelse(0,1)
 combdf = as.data.frame(combdf)
 combdf = combdf %>% mutate(isTarget = ifelse(name %in% kdTarget$entrez_gene_id,1,0))
@@ -74,6 +79,8 @@ combdf = combdf %>% mutate(isTarget = ifelse(name %in% kdTarget$entrez_gene_id,1
 #compare clusters to known drug targets using a table
 #assuming known drug targets = kdTargets and there is an outcome of 0 or 1 for target or not
 tab = table(combdf$isTarget, combdf$clusterNum) #abcd
+#view the 2x2 with summation in margins
+addmargins(tab)
 #oddsratio = ad/bc
 
 #There are 2353 known target genes in cluster 1 and 16 in cluster 2
