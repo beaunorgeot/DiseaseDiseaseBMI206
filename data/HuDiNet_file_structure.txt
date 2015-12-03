@@ -1,0 +1,24 @@
+HuDiNet file structure
+File Structure
+Column
+Description
+1
+ICD-9 code disease 1
+2
+ICD-9 code disease 2
+3
+Prevalence disease 1
+4
+Prevalence disease 2
+5
+Co-ocurrence between diseases 1 and 2
+6
+Relative Risk
+7
+Relative Risk 99% Conf. Interval (left)
+8
+Relative Risk 99% Conf. Interval (right)
+9
+Phi-correlation
+10
+t-test value
